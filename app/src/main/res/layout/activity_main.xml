@@ -7,15 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.vinxit.mobileplay.MainActivity">
     <!--内容-->
-    <LinearLayout
+    <include
+        layout="@layout/content_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"/>
-    </LinearLayout>
+        android:layout_height="match_parent"/>
     <!--侧滑菜单,layout_gravity设置滑动方向  start 左边滑出 end 右边滑出-->
     <android.support.design.widget.NavigationView
         android:layout_width="320dp"
