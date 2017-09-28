@@ -12,11 +12,4 @@
             android:icon="@drawable/ic_setting"
             android:title="设置"/>
     </group>
-<!--    <item android:title="嘿嘿">
-        <menu>
-                <item android:title="哈哈"/>
-                <item android:title="哦哦"/>
-                <item android:title="东东"/>
-        </menu>
-    </item>-->
 </menu>

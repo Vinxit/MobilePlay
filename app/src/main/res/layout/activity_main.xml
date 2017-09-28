@@ -8,12 +8,12 @@
     tools:context="com.vinxit.mobileplay.MainActivity">
     <!--内容-->
     <include
-        layout="@layout/content_main"
+        layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     <!--侧滑菜单,layout_gravity设置滑动方向  start 左边滑出 end 右边滑出-->
     <android.support.design.widget.NavigationView
-        android:layout_width="320dp"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_main"
