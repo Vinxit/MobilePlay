@@ -5,7 +5,7 @@
     android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vinxit.mobileplay.MainActivity">
+    tools:context="com.vinxit.mobileplay.view.activity.MainActivity">
     <!--内容-->
     <include
         layout="@layout/app_bar_main"

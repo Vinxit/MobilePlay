@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vinxit.mobileplay.MainActivity">
+    tools:context="com.vinxit.mobileplay.view.activity.MainActivity">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +18,5 @@
             android:popupTheme="@style/AppTheme.PopupOverlay">
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-
     <include layout="@layout/content_main"/>
 </android.support.design.widget.CoordinatorLayout>
