@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.vinxit.mobileplay.R;
+import com.vinxit.mobileplay.view.adapter.ViewPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void initTabLayout(){
+        ViewPagerAdapter mAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(mAdapter);
         tabLayout.setupWithViewPager(mViewPager);
     }
 

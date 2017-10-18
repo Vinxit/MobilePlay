@@ -2,26 +2,39 @@ package com.vinxit.mobileplay.view.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.MarginLayoutParamsCompat;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.vinxit.mobileplay.view.fragments.MainFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Vinxit_HK on 2017/10/12.
  */
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter{
-
+public class ViewPagerAdapter extends FragmentPagerAdapter{
+    private List<FragmentInfo> mFragments = new ArrayList<>();
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
-    }
 
-    /**
-     *
-     * @param position
-     * @return
-     */
+    }
+    private void initFragments(){
+        mFragments.add(new FragmentInfo("推荐", MainFragment.newInstance(1)));
+    }
+    public static class FragmentInfo{
+        private String title;
+        private Fragment fragment;
+        public FragmentInfo(String title, Fragment fragment) {
+            this.title = title;
+            this.fragment = fragment;
+        }
+    }
     @Override
     public Fragment getItem(int position) {
         return null;
@@ -32,18 +45,4 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
         return 0;
     }
 
-    @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        return super.instantiateItem(container, position);
-    }
-
-    @Override
-    public void setPrimaryItem(ViewGroup container, int position, Object object) {
-        super.setPrimaryItem(container, position, object);
-    }
-
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return super.isViewFromObject(view, object);
-    }
 }
