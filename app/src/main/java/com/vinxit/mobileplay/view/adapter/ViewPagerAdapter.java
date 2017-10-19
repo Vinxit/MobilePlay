@@ -19,13 +19,16 @@ import java.util.List;
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter{
-    private List<FragmentInfo> mFragments = new ArrayList<>();
+    private List<FragmentInfo> mFragmentInfos = new ArrayList<>();
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
-
+        initFragments();
     }
     private void initFragments(){
-        mFragments.add(new FragmentInfo("推荐", MainFragment.newInstance(1)));
+        mFragmentInfos.add(new FragmentInfo("推荐", MainFragment.newInstance(1)));
+        mFragmentInfos.add(new FragmentInfo("分类", MainFragment.newInstance(2)));
+        mFragmentInfos.add(new FragmentInfo("排行", MainFragment.newInstance(3)));
+        mFragmentInfos.add(new FragmentInfo("游戏", MainFragment.newInstance(4)));
     }
     public static class FragmentInfo{
         private String title;
@@ -37,12 +40,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter{
     }
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return mFragmentInfos.get(position).fragment;
+    }
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mFragmentInfos.get(position).title;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return mFragmentInfos.size();
     }
 
 }
