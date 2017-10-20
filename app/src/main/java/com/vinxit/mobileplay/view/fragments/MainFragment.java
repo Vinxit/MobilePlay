@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.vinxit.mobileplay.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Vinxit_HK on 2017/10/18.
@@ -34,13 +35,16 @@ public class MainFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getArguments().getInt(TYPE);
+        toString();
+        mType = getArguments().getInt(TYPE);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mType = getArguments().getInt(TYPE);
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_main,container,false);
+        ButterKnife.bind(this,view);
+        textView.setText(""+mType);
+        return view;
     }
 }
